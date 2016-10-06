@@ -15,4 +15,4 @@ const hasInlines = (editorState, type) => {
   }
 };
 
-export default {hasMarks, hasBlocks, hasInlines}
+export default {hasMarks, hasBlocks, hasInlines};
