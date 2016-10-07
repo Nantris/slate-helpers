@@ -1,7 +1,7 @@
-export default (value, {type, isVoid}) => {
-  value = value
+export default (state, {type, isVoid}) => {
+  state = state
     .transform()
     .insertBlock({type, isVoid, data: { }})
     .apply();
-  return value;
+  return state;
 };

@@ -1,11 +1,11 @@
 import {hasBlocks} from '../utils/has';
 
-export default (value, type) => {
-  const isActive = hasBlocks(value, type);
+export default (state, type) => {
+  const isActive = hasBlocks(state, type);
 
-  value = value
+  state = state
     .transform()
     .setBlock(isActive ? 'paragraph' : type)
     .apply();
-  return value;
+  return state;
 };

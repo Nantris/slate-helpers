@@ -2,26 +2,26 @@
 import EditList from 'slate-edit-list';
 import {isList} from '../utils/is';
 
-export default (value, type) => {
-  let state = value
+export default (state, type) => {
+  let newState = state
     .transform();
   const utils = EditList().utils;
   const transforms = EditList().transforms;
 
-  if (utils.isSelectionInList(value) || isList(value)) {
-    state = transforms
-      .unwrapList(state, type === 'ol_list');
+  if (utils.isSelectionInList(state) || isList(state)) {
+    newState = transforms
+      .unwrapList(newState, type === 'ol_list');
 
-    if (utils.getCurrentList(value).get('type') !== type) {
-      state = transforms
-        .wrapInList(state, type === 'ol_list');
+    if (utils.getCurrentList(state).get('type') !== type) {
+      newState = transforms
+        .wrapInList(newState, type === 'ol_list');
     }
   } else {
-    state = transforms
-      .wrapInList(state, type === 'ol_list');
+    newState = transforms
+      .wrapInList(newState, type === 'ol_list');
   }
 
-  state = state
+  newState = newState
     .apply();
-  return state;
+  return newState;
 };

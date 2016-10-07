@@ -1,8 +1,8 @@
-export default (value, displayName) => {
-  value = value
+export default (state, type) => {
+  state = state
         .transform()
-        .toggleMark(displayName)
+        .toggleMark(type)
         .apply();
 
-  return value;
+  return state;
 };

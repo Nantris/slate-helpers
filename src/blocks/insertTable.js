@@ -1,11 +1,11 @@
 /* eslint-disable new-cap */
 import EditTable from 'slate-edit-table';
 
-export default value => {
-  let state = value
+export default state => {
+  let newState = state
     .transform();
 
   return EditTable().transforms
-    .insertTable(state)
+    .insertTable(newState)
     .apply();
 };

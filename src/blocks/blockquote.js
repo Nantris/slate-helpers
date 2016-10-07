@@ -1,21 +1,21 @@
 /* eslint-disable new-cap */
 import EditBlockquote from 'slate-edit-blockquote';
 
-export default value => {
-  let state = value
+export default state => {
+  let newState = state
     .transform();
   const utils = EditBlockquote().utils;
   const transforms = EditBlockquote().transforms;
 
-  if (utils.isSelectionInBlockquote(value)) {
-    state = transforms
-      .unwrapBlockquote(state);
+  if (utils.isSelectionInBlockquote(state)) {
+    newState = transforms
+      .unwrapBlockquote(newState);
   } else {
-    state = transforms
-      .wrapInBlockquote(state);
+    newState = transforms
+      .wrapInBlockquote(newState);
   }
 
-  state = state
+  newState = newState
     .apply();
-  return state;
+  return newState;
 };
