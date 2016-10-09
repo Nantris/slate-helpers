@@ -1,18 +1,18 @@
-const expect = require('expect');
-const fs = require('fs');
-const path = require('path');
-const Slate = require('slate');
-const readMetadata = require('read-metadata');
+import expect from 'expect';
+import fs from 'fs';
+import path from 'path';
+import Slate from 'slate';
+import readMetadata from 'read-metadata';
 
-describe('slate-plugins test', function() {
+describe('slate-plugins test', () => {
   const tests = fs.readdirSync(__dirname);
 
-  tests.forEach(function(test) {
+  tests.forEach(test => {
     if (test[0] === '.' || path.extname(test).length > 0) {
       return;
     }
 
-    it(test, function() {
+    it(test, () => {
       const dir = path.resolve(__dirname, test);
 
       const inputPath = path.resolve(dir, 'input.yaml');

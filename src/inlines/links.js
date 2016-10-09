@@ -1,7 +1,7 @@
 /* eslint-disable no-alert */
 import {hasInlines} from '../utils/has';
 
-export default (state, type) => {
+export default (state, type, opt = {href: "http://example.com/", text: "example link"}) => {
   let hasLinks = hasInlines(state, type);
 
   if (hasLinks) {
@@ -10,25 +10,26 @@ export default (state, type) => {
       .unwrapInline(type)
       .apply();
   } else if (state.isExpanded) {
-    const href = window.prompt('Enter the URL of the link:');
+    // const href = window.prompt('Enter the URL of the link:');
     state = state
       .transform()
+      .unwrapInline(type)
       .wrapInline({
         type: type,
-        data: {href}
+        data: {href: opt.href}
       })
       .collapseToEnd()
       .apply();
   } else {
-    const href = window.prompt('Enter the URL of the link:');
-    const text = window.prompt('Enter the text for the link:');
+    // const href = window.prompt('Enter the URL of the link:');
+    // const text = window.prompt('Enter the text for the link:');
     state = state
       .transform()
-      .insertText(text)
-      .extendBackward(text.length)
+      .insertText(opt.text)
+      .extendBackward(opt.text.length)
       .wrapInline({
         type: type,
-        data: {href}
+        data: {href: opt.href}
       })
       .collapseToEnd()
       .apply();
