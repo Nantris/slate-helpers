@@ -44,7 +44,7 @@
     "slate": "^0.14.15"
   },
   "scripts": {
-    "lint": "eslint src test docs",
+    "lint": "eslint src test",
     "clean": "rimraf lib dist",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
     "build": "npm run build:commonjs",
