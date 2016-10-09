@@ -1,11 +1,11 @@
 import {hasBlocks} from '../utils/has';
 
-export default (state, {type, typeDefault = 'paragraph'}) => {
-  const isActive = hasBlocks(state, type);
+export default (state, opt = {type: 'heading', typeDefault: 'paragraph'}) => {
+  const isActive = hasBlocks(state, opt.type);
 
   state = state
     .transform()
-    .setBlock(isActive ? typeDefault : type)
+    .setBlock(isActive ? opt.typeDefault || 'paragraph' : opt.type)
     .apply();
   return state;
 };
