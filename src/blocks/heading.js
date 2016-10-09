@@ -1,11 +1,18 @@
 import {hasBlocks} from '../utils/has';
+import {assign} from 'lodash';
 
-export default (state, opt = {type: 'heading', typeDefault: 'paragraph'}) => {
-  const isActive = hasBlocks(state, opt.type);
+const DEFAULT = {
+  type: 'heading',
+  typeDefault: 'paragraph'
+};
+
+export default (state, opt = DEFAULT) => {
+  const {type, typeDefault} = assign({}, DEFAULT, opt);
+  const isActive = hasBlocks(state, type);
 
   state = state
     .transform()
-    .setBlock(isActive ? opt.typeDefault || 'paragraph' : opt.type)
+    .setBlock(isActive ? typeDefault : type)
     .apply();
   return state;
 };

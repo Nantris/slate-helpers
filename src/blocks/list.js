@@ -1,23 +1,26 @@
 /* eslint-disable new-cap */
 import EditList from 'slate-edit-list';
 import {isList} from '../utils/is';
+import {assign} from 'lodash';
 
-export default (state, opt = {
+const DEFAULT = {
   typeUL: 'list-ul',
   typeOL: 'list-ol',
   typeItem: 'list-item',
   typeDefault: 'paragraph',
   ordered: true
-}) => {
+};
+
+export default (state, opt = DEFAULT) => {
+  const options = assign({}, DEFAULT, opt);
   let newState = state
     .transform();
-  const EL = EditList(opt);
+
+  const {typeUL, typeOL, ordered} = options;
+  const EL = EditList(options);
 
   const utils = EL.utils;
   const transforms = EL.transforms;
-  const ordered = opt.ordered || false;
-  const typeOL = opt.typeOL || 'list-ol';
-  const typeUL = opt.typeUL || 'list-ul';
 
   if (utils.isSelectionInList(state) || isList(state)) {
     newState = transforms

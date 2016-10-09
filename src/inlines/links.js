@@ -1,10 +1,15 @@
 /* eslint-disable no-alert */
 import {hasInlines} from '../utils/has';
+import {assign} from 'lodash';
 
-export default (state, type, opt = {href: "http://example.com/", text: "example link"}) => {
+const DEFAULT = {
+  href: "http://example.com/",
+  text: "example link"
+};
+
+export default (state, type, opt = DEFAULT) => {
+  const {text, href} = assign({}, DEFAULT, opt);
   let hasLinks = hasInlines(state, type);
-  const text = opt.text || "link exmple";
-  const href = opt.href || "http://example.com/";
 
   if (hasLinks) {
     state = state
