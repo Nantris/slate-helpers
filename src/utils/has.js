@@ -6,7 +6,7 @@ const hasMarks = (editorState, type) => {
 const hasBlocks = (editorState, type) => {
   if (editorState.blocks) {
     return editorState.blocks.some(node =>
-      node.type === type || node.type.indexOf(`${type}-`) === 0);
+      node.type === type || node.type.indexOf(`${type}`) === 0);
   }
 };
 const hasInlines = (editorState, type) => {

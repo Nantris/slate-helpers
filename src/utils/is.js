@@ -3,11 +3,8 @@ import EditList from 'slate-edit-list';
 import EditBlockquote from 'slate-edit-blockquote';
 import EditTable from 'slate-edit-table';
 
-const ListUtils = EditList().utils;
-const BlockquoteUtils = EditBlockquote().utils;
-const TableUtils = EditTable().utils;
-
-const isList = (editorState, type) => {
+const isList = (editorState, type, opt) => {
+  const ListUtils = EditList(opt).utils;
   const current = ListUtils.getCurrentList(editorState);
   if (current) {
     return current.type === type;
@@ -16,11 +13,13 @@ const isList = (editorState, type) => {
   return false;
 };
 
-const isBlockquote = editorState => {
+const isBlockquote = (editorState, opt) => {
+  const BlockquoteUtils = EditBlockquote(opt).utils;
   return BlockquoteUtils.isSelectionInBlockquote(editorState);
 };
 
-const isTable = editorState => {
+const isTable = (editorState, opt) => {
+  const TableUtils = EditTable(opt).utils;
   return TableUtils.isSelectionInTable(editorState);
 };
 
