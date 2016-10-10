@@ -4,7 +4,3 @@ node_js:
   - v4
   - v5
   - v6
-
-install:
-  - "npm install"
-  - "npm install immutable babel-runtime"
