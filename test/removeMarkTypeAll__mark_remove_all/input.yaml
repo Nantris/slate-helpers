@@ -1,0 +1,15 @@
+nodes:
+  - kind: block
+    type: paragraph
+    nodes:
+      - kind: text
+        ranges:
+          - marks:
+              - type: test
+                data:
+                  foo: bar
+              - type: test
+                data:
+                  foo2: bar2
+            text: Hello
+          - text: " World"

@@ -1,7 +1,7 @@
 export default (state, options) => {
   state = state
     .transform()
-    .insertBlock(options)
+    .setBlock(options)
     .apply();
   return state;
 };

@@ -1,4 +1,4 @@
-import marks from '../../src/marks/basicMark';
+import insertInline from '../../src/inlines/insertInline';
 
 export default state => {
   const {document, selection} = state;
@@ -8,7 +8,7 @@ export default state => {
     anchorKey: first.key,
     anchorOffset: 0,
     focusKey: first.key,
-    focusOffset: 4
+    focusOffset: 1
   });
 
   const nextState = state
@@ -16,5 +16,9 @@ export default state => {
     .moveTo(range)
     .apply();
 
-  return marks(nextState, 'bold');
+  return insertInline(nextState, {
+    type: 'customInline',
+    isVoid: true,
+    data: {test: 'test'}
+  });
 };

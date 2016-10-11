@@ -1,7 +1,7 @@
-export default (state, type) => {
+export default (state, options) => {
   state = state
         .transform()
-        .toggleMark(type)
+        .toggleMark(options)
         .apply();
 
   return state;

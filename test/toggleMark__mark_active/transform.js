@@ -1,4 +1,4 @@
-import marks from '../../src/marks/basicMark';
+import marks from '../../src/marks/toggleMark';
 
 export default state => {
   const {document, selection} = state;
@@ -16,5 +16,5 @@ export default state => {
     .moveTo(range)
     .apply();
 
-  return marks(nextState, 'bold');
+  return marks(nextState, {type: 'bold'});
 };

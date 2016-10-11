@@ -1,4 +1,4 @@
-import marks from '../../src/marks/basicMark';
+import marks from '../../src/marks/addMark';
 
 export default state => {
   const {document, selection} = state;
@@ -6,9 +6,9 @@ export default state => {
   const first = texts.first();
   const range = selection.merge({
     anchorKey: first.key,
-    anchorOffset: 4,
+    anchorOffset: 0,
     focusKey: first.key,
-    focusOffset: 7
+    focusOffset: 5
   });
 
   const nextState = state
@@ -16,5 +16,5 @@ export default state => {
     .moveTo(range)
     .apply();
 
-  return marks(nextState, 'bold');
+  return marks(nextState, {type: 'test', data: {foo: 'bar'}});
 };

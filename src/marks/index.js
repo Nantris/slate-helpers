@@ -1,3 +1,6 @@
-import basicMark from './basicMark';
+import toggleMark from './toggleMark';
+import addMark from './addMark';
+import removeMarkAll from './removeMarkAll';
+import removeMarkTypeAll from './removeMarkTypeAll';
 
-export default {basicMark};
+export default {toggleMark, addMark, removeMarkTypeAll, removeMarkAll};
