@@ -1,21 +1,27 @@
+import {Set} from 'immutable';
+
 const whatMarkTypes = editorState => {
   if (editorState.marks) {
     return editorState.marks.map(mark => mark.type);
   }
 
-  return null;
+  return new Set();
 };
 
-// const hasBlocks = (editorState, type) => {
-//   if (editorState.blocks) {
-//     return editorState.blocks.some(node =>
-//       node.type === type || node.type.indexOf(`${type}`) === 0);
-//   }
-// };
-// const hasInlines = (editorState, type) => {
-//   if (editorState.inlines) {
-//     return editorState.inlines.some(inline => inline.type === type);
-//   }
-// };
+const whatBlockTypes = editorState => {
+  if (editorState.blocks) {
+    return editorState.blocks.map(block => block.type);
+  }
 
-export default {whatMarkTypes};
+  return new Set();
+};
+
+const whatInlineTypes = editorState => {
+  if (editorState.inlines) {
+    return editorState.inlines.map(block => block.type);
+  }
+
+  return new Set();
+};
+
+export default {whatMarkTypes, whatBlockTypes, whatInlineTypes};

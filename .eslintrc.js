@@ -22,5 +22,9 @@ module.exports = {
       pragma: "React",  // Pragma to use, default to "React"
       version: "15.3.1"
     }
+  },
+  rules: {
+    "new-cap": 0,
+    "valid-jsdoc": 0
   }
 };

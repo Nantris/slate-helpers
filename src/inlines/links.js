@@ -1,5 +1,5 @@
 /* eslint-disable no-alert */
-import {hasInlines} from '../utils/has';
+import {haveInlines} from '../utils/have';
 import {assign} from 'lodash';
 
 const DEFAULT = {
@@ -9,9 +9,9 @@ const DEFAULT = {
 
 export default (state, type, opt = DEFAULT) => {
   const {text, href} = assign({}, DEFAULT, opt);
-  let hasLinks = hasInlines(state, type);
+  let haveLinks = haveInlines(state, type);
 
-  if (hasLinks) {
+  if (haveLinks) {
     state = state
       .transform()
       .unwrapInline(type)

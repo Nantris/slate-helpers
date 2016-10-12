@@ -1,4 +1,4 @@
-import removeMarkAll from '../../src/marks/removeMarkAll';
+import addDataToCurrent from '../../src/blocks/addDataToCurrent';
 
 export default state => {
   const {document, selection} = state;
@@ -16,5 +16,5 @@ export default state => {
     .moveTo(range)
     .apply();
 
-  return removeMarkAll(nextState);
+  return addDataToCurrent(nextState, {data: {foo: 'bar'}});
 };

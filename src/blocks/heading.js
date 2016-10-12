@@ -1,4 +1,4 @@
-import {hasBlocks} from '../utils/has';
+import {haveBlocks} from '../utils/have';
 import {assign} from 'lodash';
 
 const DEFAULT = {
@@ -8,7 +8,7 @@ const DEFAULT = {
 
 export default (state, opt = DEFAULT) => {
   const {type, typeDefault} = assign({}, DEFAULT, opt);
-  const isActive = hasBlocks(state, type);
+  const isActive = haveBlocks(state, type);
 
   state = state
     .transform()
