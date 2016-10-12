@@ -1,11 +1,3 @@
-const whatMarks = editorState => {
-  if (editorState.marks) {
-    return editorState.marks.map(mark => mark);
-  }
-
-  return null;
-};
-
 const whatMarkTypes = editorState => {
   if (editorState.marks) {
     return editorState.marks.map(mark => mark.type);
@@ -26,4 +18,4 @@ const whatMarkTypes = editorState => {
 //   }
 // };
 
-export default {whatMarks, whatMarkTypes};
+export default {whatMarkTypes};

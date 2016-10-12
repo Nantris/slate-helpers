@@ -1,4 +1,4 @@
-import marks from '../../src/marks/addMark';
+import marks from '../../src/marks/addMarkOverwrite';
 
 export default state => {
   const {document, selection} = state;
