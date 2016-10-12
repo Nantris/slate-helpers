@@ -7,7 +7,7 @@ export default (state, options) => {
         .transform();
 
   // if type exist, remove same type mark
-  if (whatMarkTypes(state).have(type)) {
+  if (whatMarkTypes(state).has(type)) {
     getMarkType(state, type).forEach(mark => {
       newState = newState.removeMark(mark);
     });
