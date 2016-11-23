@@ -19,10 +19,9 @@ export default (state, type, opt = DEFAULT) => {
   } else if (state.isExpanded) {
     state = state
       .transform()
-      .unwrapInline(type)
       .wrapInline({
-        type: type,
-        data: {href: href}
+        type,
+        data: {href}
       })
       .collapseToEnd()
       .apply();
