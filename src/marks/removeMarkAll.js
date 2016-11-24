@@ -3,7 +3,7 @@ export default state => {
         .transform();
 
   if (state.marks) {
-  	// remove all marks
+    // remove all marks
     state.marks.forEach(mark => {
       newState = newState.removeMark(mark);
     });
