@@ -3,12 +3,12 @@ import links from '../../src/inlines/links';
 export default state => {
   const {document, selection} = state;
   const texts = document.getTexts();
-  const first = texts.first();
+  const second = texts.get(1);
   const range = selection.merge({
-    anchorKey: first.key,
-    anchorOffset: 10,
-    focusKey: first.key,
-    focusOffset: 14
+    anchorKey: second.key,
+    anchorOffset: 4,
+    focusKey: second.key,
+    focusOffset: 8
   });
 
   const nextState = state

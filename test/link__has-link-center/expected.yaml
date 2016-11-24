@@ -3,13 +3,4 @@ nodes:
     type: paragraph
     nodes:
       - kind: text
-        text: "Hello exam"
-      - kind: inline
-        data: 
-          href: "http://test.com/"
-        nodes:
-          - kind: text
-            text: "ple "
-        type: link
-      - kind: text
-        text: "link World"
+        text: "Hello example link World"
