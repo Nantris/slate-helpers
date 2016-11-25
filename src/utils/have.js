@@ -17,6 +17,14 @@ const haveInlines = (editorState, type) => {
   }
 };
 
+const haveDataKeyEqualValueInSomeBlocks = (editorState, dataKey, value) => {
+  if (editorState.blocks) {
+    return editorState.blocks.some(block =>
+      block.get('data').has(dataKey) &&
+      block.get('data').get(dataKey) === value);
+  }
+};
+
 const haveDataKeyInSomeBlocks = (editorState, dataKey) => {
   if (editorState.blocks) {
     return editorState.blocks.some(block =>
@@ -36,5 +44,6 @@ export default {
   haveBlocks,
   haveInlines,
   haveDataKeyInSomeBlocks,
-  haveDataKeyInSomeMarks
+  haveDataKeyInSomeMarks,
+  haveDataKeyEqualValueInSomeBlocks
 };
