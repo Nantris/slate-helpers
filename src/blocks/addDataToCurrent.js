@@ -10,7 +10,7 @@ export default (state, {data}) => {
   if (state.blocks) {
     state.blocks.forEach(type => {
       const mapData = Map(data);
-      let typeOriginalData = type.get('data');
+      let typeOriginalData = type.get('data') || Map({});
       let newData;
 
       mapData.forEach((value, key) => {
