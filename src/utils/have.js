@@ -17,14 +17,6 @@ const haveInlines = (editorState, type) => {
   }
 };
 
-const haveDataKeyEqualValueInSomeBlocks = (editorState, dataKey, value) => {
-  if (editorState.blocks) {
-    return editorState.blocks.some(block =>
-      block.get('data').has(dataKey) &&
-      block.get('data').get(dataKey) === value);
-  }
-};
-
 const haveDataKeyInSomeBlocks = (editorState, dataKey) => {
   if (editorState.blocks) {
     return editorState.blocks.some(block =>
@@ -36,6 +28,14 @@ const haveDataKeyInSomeMarks = (editorState, dataKey) => {
   if (editorState.marks) {
     return editorState.marks.some(mark =>
       mark.get('data').has(dataKey) && mark.get('data').get(dataKey));
+  }
+};
+
+const haveDataKeyEqualValueInSomeBlocks = (editorState, dataKey, value) => {
+  if (editorState.blocks) {
+    return editorState.blocks.some(block =>
+      block.get('data').has(dataKey) &&
+      block.get('data').get(dataKey) === value);
   }
 };
 
