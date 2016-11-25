@@ -19,13 +19,15 @@ const haveInlines = (editorState, type) => {
 
 const haveDataKeyInSomeBlocks = (editorState, dataKey) => {
   if (editorState.blocks) {
-    editorState.blocks.some(block => block.get('data').has(dataKey));
+    return editorState.blocks.some(block =>
+      block.get('data').has(dataKey) && block.get('data').get(dataKey));
   }
 };
 
 const haveDataKeyInSomeMarks = (editorState, dataKey) => {
   if (editorState.marks) {
-    editorState.marks.some(mark => mark.get('data').has(dataKey));
+    return editorState.marks.some(mark =>
+      mark.get('data').has(dataKey) && mark.get('data').get(dataKey));
   }
 };
 
