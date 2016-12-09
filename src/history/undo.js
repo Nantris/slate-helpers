@@ -2,7 +2,7 @@ export default state => {
   state = state
         .transform()
         .undo()
-        .apply();
+        .apply({save: false});
 
   return state;
 };
