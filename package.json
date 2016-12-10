@@ -68,7 +68,7 @@
     "lodash": "^4.16.4",
     "slate": "^0.16.4",
     "slate-edit-blockquote": "^0.1.2",
-    "slate-edit-list": "^0.5.1",
+    "slate-edit-list": "^0.5.5",
     "slate-edit-table": "^0.8.3"
   }
 }
