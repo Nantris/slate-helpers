@@ -26,7 +26,7 @@ const getRangeClientRectsChrome = range => {
   throw new Error('Found an unexpected detached subtree when getting range client rects.');
 };
 
-const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+const isChrome = typeof window !== 'undefined' && /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 const getRangeClientRects = isChrome ? getRangeClientRectsChrome : function(range) {
   return Array.from(range.getClientRects());
 };
