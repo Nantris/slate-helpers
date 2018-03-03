@@ -1,4 +1,6 @@
 # slate-plugins [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/Canner/slate-plugins.svg)](https://greenkeeper.io/)
 > slate plugin collections
 
 ## Installation
