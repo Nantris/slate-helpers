@@ -1,20 +1,21 @@
 import addDataToCurrent from '../../src/blocks/addDataToCurrent';
+import {Range} from 'slate';
 
-export default state => {
-  const {document, selection} = state;
-  const texts = document.getTexts();
-  const first = texts.first();
-  const range = selection.merge({
+export default change => {
+  const {value} = change;
+  const {document, selection} = value;
+  const first = document.getFirstText();
+  const range = Range.create({
     anchorKey: first.key,
     anchorOffset: 0,
     focusKey: first.key,
     focusOffset: 5
   });
 
-  const nextState = state
-    .transform()
-    .moveTo(range)
-    .apply();
+  const currentFrag = document.getFragmentAtRange(range);
 
-  return addDataToCurrent(nextState, {data: {foo: 'bar'}});
+  const nextValue = selection
+    .moveToRangeOf(currentFrag);
+
+  return addDataToCurrent(nextValue.change(), {data: {foo: 'bar'}});
 };

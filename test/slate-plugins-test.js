@@ -4,6 +4,13 @@ import path from 'path';
 import Slate from 'slate';
 import readMetadata from 'read-metadata';
 
+function deserializeValue(json) {
+  return Slate.Value.fromJSON(
+      json,
+      { normalize: false }
+  );
+}
+
 describe('slate-plugins test', () => {
   const tests = fs.readdirSync(__dirname);
 
@@ -24,13 +31,13 @@ describe('slate-plugins test', () => {
         expected = readMetadata.sync(expectedPath);
       }
 
-      const runTransform = require(path.resolve(dir, 'transform.js'));
-      const stateInput = Slate.Raw.deserialize(input, {terse: true});
-      const newState = runTransform(stateInput);
+      const runTransform = require(path.resolve(dir, 'transform.js')).default;
+      const valueInput = deserializeValue(input);
+      const newChange = runTransform(valueInput.change());
 
       if (expected) {
-        const newDocJSon = Slate.Raw.serialize(newState, {terse: true});
-        expect(newDocJSon).toEqual(expected);
+        const newDocJSon = newChange.value.toJSON();
+        expect(newDocJSon).toEqual(deserializeValue(expected).toJSON());
       }
     });
   });
