@@ -17,23 +17,23 @@ export const haveInlines = ({value}, type) => {
   }
 };
 
-export const haveDataKeyInSomeBlocks = (editorState, dataKey) => {
-  if (editorState.blocks) {
-    return editorState.blocks.some(block =>
+export const haveDataKeyInSomeBlocks = ({value}, dataKey) => {
+  if (value.blocks.size > 0) {
+    return value.blocks.some(block =>
       block.get('data').has(dataKey) && block.get('data').get(dataKey));
   }
 };
 
-export const haveDataKeyInSomeMarks = (editorState, dataKey) => {
-  if (editorState.marks) {
-    return editorState.marks.some(mark =>
+export const haveDataKeyInSomeMarks = ({value}, dataKey) => {
+  if (value.marks.size > 0) {
+    return value.marks.some(mark =>
       mark.get('data').has(dataKey) && mark.get('data').get(dataKey));
   }
 };
 
-export const haveDataKeyEqualValueInSomeBlocks = (editorState, dataKey, value) => {
-  if (editorState.blocks) {
-    return editorState.blocks.some(block =>
+export const haveDataKeyEqualValueInSomeBlocks = ({value}, dataKey, value) => {
+  if (value.blocks.size > 0) {
+    return value.blocks.some(block =>
       block.get('data').has(dataKey) &&
       block.get('data').get(dataKey) === value);
   }

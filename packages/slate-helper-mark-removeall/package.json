@@ -1,0 +1,14 @@
+{
+  "name": "@canner/slate-helper-mark-removeall",
+  "version": "1.0.0",
+  "description": "A slate helper to remove all mark",
+  "main": "lib/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "../../node_modules/.bin/mocha ./test/index.js --compilers js:babel-register --bail --reporter=list"
+  },
+  "author": "",
+  "license": "MIT"
+}

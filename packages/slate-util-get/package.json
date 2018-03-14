@@ -1,0 +1,11 @@
+{
+  "name": "@canner/slate-util-get",
+  "version": "1.0.0",
+  "description": "A slate utility function to get values",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT"
+}
