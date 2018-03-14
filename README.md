@@ -5,9 +5,9 @@
 
 This repository is maintain in a monorepo see packages in `packages` folder.
 
-## Helper packages
+# Helper packages
 
-### Blocks
+## Blocks
 
 #### `@canner/slate-helper-block-adddata`
 
@@ -39,7 +39,7 @@ Transform normal block to heading block, if it is already wrapped unwrap it.
 
 This plugin is based on https://github.com/GitbookIO/slate-edit-list/, will wrap to block list, if it's wrapped unwrap it.
 
-### Inlines
+## Inlines
 
 #### `@canner/slate-helper-inline-links`
 
@@ -47,118 +47,103 @@ This plugin is based on https://github.com/GitbookIO/slate-edit-list/, will wrap
 
 insert a link with `options.href` settings, wrapped inline if the selection is expanded, and unwrap if it is a link.
 
-### Marks
+## Marks
 
-#### `addMarkOverwrite`
+#### `@canner/slate-helper-mark-addoverwrite`
 
-`addMarkOverwrite(state: State, options: Object)`
+`fn(change: Change, options: Object) => Change`
 
-if the selection is equal to `options.type` it will remove the original one and add a new mark with the option settings.
+If the selected marks have type that is equal to `options.type`, will be removeed the original one and add a new mark with the option settings.
 
+#### `@canner/slate-helper-mark-removeall`
 
-#### `removeMarkAll`
+`fn(change: Change) => Change`
 
-`removeMarkAll(state: State)`
+Remove all marks in the selection.
 
-remove all marks in the selection.
+#### `@canner/slate-helper-mark-removetype`
 
-#### `removeMarkTypeAll`
+`fn(change: Change, type: String) => Change`
 
-`removeMarkTypeAll(state: State, type: String)`
+Remove specific mark type in the selection.
 
-remove mark in the selection with the same mark type.
+----
 
-#### `toggleMark`
+# Utilities packages
 
-`toggleMark(state: State, options: Object)`
+## `@canner/slate-util-get`
 
-toggle mark with option settings.
-
-
-## Utilities
-
-### get
+Supported methods:
 
 #### `getMarkType`
 
-`getMarkType(state: State, type: String)`
+`getMarkType(change: Change, type: String) => List<Mark>`
 
-get all marks of a type in a selection.
+Get marks that is a specific type in the selection.
 
 #### `getBlockType`
 
-`getBlockType(state: State, type: String)`
+`getBlockType(change: Change, type: String) => List<Block>`
 
-get all blocks of a type in a selection.
+Get blocks that is a specific type in the selection.
 
-### have
+## `@canner/slate-util-have`
+
+Supported methods:
 
 #### `haveMarks`
 
-`haveMarks(state: State, type: String) => Boolean`
+`haveMarks(change: Change, type: String) => Boolean`
 
-have mark of a type in the selection.
+The selected area have a specific mark type.
 
 #### `haveBlocks`
 
-`haveBlocks(state: State, type: String) => Boolean`
+`haveBlocks(change: Change, type: String) => Boolean`
 
-have block of a type in the selection.
+The selected area have a specific block type.
 
 
 #### `haveInlines`
 
-`haveInlines(state: State, type: String) => Boolean`
+`haveInlines(change: Change, type: String) => Boolean`
 
-have inline of a type in the selection.
+The selected area have a specific inline type.
 
 #### `haveDataKeyInSomeBlocks`
 
-`haveDataKeyInSomeBlocks(state: State, dataKey: String) => Boolean`
+`haveDataKeyInSomeBlocks(change: Change, dataKey: String) => Boolean`
 
-have data key in some blocks in the selection
+Whether there is a specific data key in some blocks.
 
 #### `haveDataKeyInSomeMarks`
 
-`haveDataKeyInSomeMarks(state: State, dataKey: String) => Boolean`
+`haveDataKeyInSomeMarks(change: Change, dataKey: String) => Boolean`
 
-have data key in some marks in the selection.
+Whether there is a specific data key in some marks.
 
+## `@canner/slate-util-what`
 
-### is
-
-#### `isList`
-
-`isList(state: State, type: String, options: Object) => Boolean`
-
-#### `isBlockquote`
-
-`isBlockquote(state: State, options: Object) => Boolean`
-
-
-#### `isTable`
-
-`isTable(state: State, options: Object) => Boolean`
-
-### what
+Supported methods:
 
 #### `whatMarkTypes`
 
-`whatMarkTypes(state: State)`
+`whatMarkTypes(change: Change) => List<string>`
 
-what are the mark types in a selection.
+What are the types that the marks have in the selection.
 
 #### `whatBlockTypes`
 
-`whatBlockTypes(state: State)`
+`whatBlockTypes(change: Change) => List<string>`
 
-what are the block types in a selection.
+What are the types that the blocks have in the selection.
 
 #### `whatInlineTypes`
 
-`whatInlineTypes(state: State)`
+`whatInlineTypes(change: Change) => List<string>`
 
-what are the inline types in a selection
+What are the types that the inline have in the selection.
+
 
 
 ## Development

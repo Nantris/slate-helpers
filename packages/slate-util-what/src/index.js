@@ -1,11 +1,11 @@
-import {Set} from 'immutable';
+import {List} from 'immutable';
 
 export const whatMarkTypes = ({value}) => {
   if (value.marks) {
     return value.marks.map(mark => mark.type);
   }
 
-  return new Set();
+  return new List();
 };
 
 export const whatBlockTypes = ({value}) => {
@@ -13,7 +13,7 @@ export const whatBlockTypes = ({value}) => {
     return value.blocks.map(block => block.type);
   }
 
-  return new Set();
+  return new List();
 };
 
 export const whatInlineTypes = ({value}) => {
@@ -21,6 +21,6 @@ export const whatInlineTypes = ({value}) => {
     return value.inlines.map(block => block.type);
   }
 
-  return new Set();
+  return new List();
 };
 
