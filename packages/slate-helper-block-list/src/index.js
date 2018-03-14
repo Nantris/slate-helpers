@@ -1,6 +1,5 @@
 /* eslint-disable new-cap */
 import EditList from 'slate-edit-list';
-import {assign} from 'lodash';
 
 const DEFAULT = {
   types: ['list-ol', 'list-ul'],
@@ -10,7 +9,7 @@ const DEFAULT = {
 };
 
 export default (change, opt = DEFAULT) => {
-  const options = assign({}, DEFAULT, opt);
+  const options = Object.assign({}, DEFAULT, opt);
   const {types, ordered} = options;
   const {utils, changes} = EditList(options);
   const currentType = (ordered ? types[0] : types[1]);

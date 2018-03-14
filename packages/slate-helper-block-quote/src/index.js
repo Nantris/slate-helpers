@@ -1,6 +1,5 @@
 /* eslint-disable new-cap */
 import EditBlockquote from 'slate-edit-blockquote';
-import {assign} from 'lodash';
 
 const DEFAULT = {
   type: 'blockquote',
@@ -8,7 +7,7 @@ const DEFAULT = {
 };
 
 export default (change, opt = DEFAULT) => {
-  const options = assign({}, DEFAULT, opt);
+  const options = Object.assign({}, DEFAULT, opt);
   let newChange;
 
   const utils = EditBlockquote(options).utils;

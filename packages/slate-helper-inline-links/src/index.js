@@ -1,6 +1,4 @@
-/* eslint-disable no-alert */
 import {haveInlines} from '@canner/slate-util-have';
-import {assign} from 'lodash';
 
 const DEFAULT = {
   href: "http://example.com/",
@@ -8,7 +6,7 @@ const DEFAULT = {
 };
 
 export default (change, type, opt = DEFAULT) => {
-  const {text, href} = assign({}, DEFAULT, opt);
+  const {text, href} = Object.assign({}, DEFAULT, opt);
   let haveLinks = haveInlines(change, type);
 
   if (haveLinks) {
