@@ -1,21 +1,19 @@
-export const haveMarks = (editorState, type) => {
-  if (editorState.marks) {
-    return editorState.marks.some(mark => mark.type === type);
+export const haveMarks = ({value}, type) => {
+  if (value.marks.size > 0) {
+    return value.marks.some(mark => mark.type === type);
   }
 };
 
-export const haveBlocks = (change, type) => {
-  const {value} = change;
-  const blocks = value.document.getBlocks();
-  if (blocks.size > 0) {
-    return blocks.some(node =>
+export const haveBlocks = ({value}, type) => {
+  if (value.blocks.size > 0) {
+    return value.blocks.some(node =>
       node.type === type || node.type.indexOf(`${type}`) === 0);
   }
 };
 
-export const haveInlines = (editorState, type) => {
-  if (editorState.inlines) {
-    return editorState.inlines.some(inline => inline.type === type);
+export const haveInlines = ({value}, type) => {
+  if (value.inlines.size > 0) {
+    return value.inlines.some(inline => inline.type === type);
   }
 };
 

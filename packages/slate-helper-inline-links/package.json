@@ -1,12 +1,17 @@
 {
-  "name": "@canner/slate-helpers-block-adddata",
+  "name": "@canner/slate-helper-inline-links",
   "version": "1.0.0",
-  "description": "A slate helper to add data to current block",
+  "description": "A slate helper for links",
   "main": "lib/index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
     "test": "../../node_modules/.bin/mocha ./test/index.js --compilers js:babel-register --bail --reporter=list"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@canner/slate-utils-have": "1.0.0"
   }
 }

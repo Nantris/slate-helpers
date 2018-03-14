@@ -1,5 +1,5 @@
 {
-  "name": "@canner/slate-helpers-block-blockquote",
+  "name": "@canner/slate-helper-block-quote",
   "version": "1.0.0",
   "description": "A slate helper for blockquote",
   "main": "lib/index.js",

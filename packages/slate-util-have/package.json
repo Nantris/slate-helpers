@@ -1,7 +1,7 @@
 {
-  "name": "@canner/slate-helpers-block-list",
+  "name": "@canner/slate-util-have",
   "version": "1.0.0",
-  "description": "A helper for block list",
+  "description": "Utility functions for judging whether it have something",
   "main": "lib/index.js",
   "directories": {
     "test": "test"
@@ -10,8 +10,5 @@
     "test": "../../node_modules/.bin/mocha ./test/index.js --compilers js:babel-register --bail --reporter=list"
   },
   "author": "",
-  "license": "MIT",
-  "dependencies": {
-    "slate-edit-list": "^0.11.2"
-  }
+  "license": "MIT"
 }

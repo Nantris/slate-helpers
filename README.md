@@ -1,91 +1,49 @@
-# slate-plugins [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
-> slate plugin collections
-
-## Installation
-
-```sh
-$ npm install --save slate-plugins
-```
+# slate-helpers
+> A set of helper and utility functions for Slate editors.
 
 ## Usage
 
-```js
-var slatePlugins = require('slate-plugins');
+This repository is maintain in a monorepo see packages in `packages` folder.
 
-// access blocks
-slatePlugins.blocks;
-// access inlines
-slatePlugins.inlines;
-// access marks
-slatePlugins.marks;
-
-```
-
-## Plugins
+## Helper packages
 
 ### Blocks
 
-#### `addDataToCurrent`
+#### `@canner/slate-helper-block-adddata`
 
-`addDataToCurrent(state: State, data: Object)`
+`fn(change: Change, data: Object) => Change`
 
-This update current type with additional data, this could be useful in align...
+Add additional data to block, this could be useful in implement things like align.
 
-#### `blockquote`
+#### `@canner/slate-helper-block-quote`
 
-`blockquote(state: State, options: Object)`
+`fn(change: Change, options: Object) => Change`
 
-This plugin is based on https://github.com/GitbookIO/slate-edit-blockquote, will wrapped block quote if the selection is not within a blockquote, unwrapped otherwise.
+This plugin is based on https://github.com/GitbookIO/slate-edit-blockquote, will wrapped block quote if the selection is not within a blockquote, otherwise unwrapped it.
 
-#### `clearDataByKeyToCurrent`
+#### `@canner/slate-helper-block-cleardatabykey`
 
-`clearDataByKeyToCurrent(state: State, dataKey: String)`
+`fn(change: Change, dataKey: String) => Change`
 
-This delete a data's key in current block type
+This remove a data key that stores in current block type
 
-#### `heading`
+#### `@canner/slate-helper-block-heading`
 
-`heading(state: State, options: Object)`
+`fn(change: Change, options: Object) => Change`
 
-Transform block to heading, if it is already wrapped unwrap it.
+Transform normal block to heading block, if it is already wrapped unwrap it.
 
-#### `insertBlock`
+#### `@canner/slate-helper-block-list`
 
-`insertBlock(state: State, options: Object)`
+`fn(change: Change, options: Object) => Change`
 
-Insert a new block with settings in options.
-
-#### `list`
-
-`list(state: State, options: Object)`
-
-This plugin is based on https://github.com/GitbookIO/slate-edit-list/, will wrap to list, if it's wrapped unwrap it.
-
-#### `setBlock`
-
-`setBlock(state: State, options: Object)`
-
-update block with new option settings.
-
-### History
-
-#### `undo`
-
-`undo(state: State)`
-
-do undo once.
+This plugin is based on https://github.com/GitbookIO/slate-edit-list/, will wrap to block list, if it's wrapped unwrap it.
 
 ### Inlines
 
-#### `insetInline`
+#### `@canner/slate-helper-inline-links`
 
-`insertInline(state: State, options: Object)`
-
-insert a new inline with option settings.
-
-#### `links`
-
-`links(state: State, type: String, options: Object)`
+`fn(change: Change, type: String, options: Object) => Change`
 
 insert a link with `options.href` settings, wrapped inline if the selection is expanded, and unwrap if it is a link.
 
@@ -203,10 +161,14 @@ what are the block types in a selection.
 what are the inline types in a selection
 
 
-## Start example server
+## Development
 
 ```
-node devServer.js
+# Get started
+$ lerna bootstrap
+
+# run tests
+$ lerna run test
 ```
 
 ## Maintainer
@@ -217,10 +179,3 @@ node devServer.js
 
 MIT © [Canner](https://github.com/canner)
 
-
-[npm-image]: https://badge.fury.io/js/slate-plugins.svg
-[npm-url]: https://npmjs.org/package/slate-plugins
-[travis-image]: https://travis-ci.org/Canner/slate-plugins.svg?branch=master
-[travis-url]: https://travis-ci.org/Canner/slate-plugins
-[daviddm-image]: https://david-dm.org/Canner/slate-plugins.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/Canner/slate-plugins
