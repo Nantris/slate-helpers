@@ -42,11 +42,11 @@ export const haveDataKeyInSomeMarks = ({value}, dataKey) => {
   return false;
 };
 
-export const haveDataKeyEqualValueInSomeBlocks = ({value}, dataKey, value) => {
+export const haveDataKeyEqualValueInSomeBlocks = ({value}, dataKey, dataValue) => {
   if (value.blocks.size > 0) {
     return value.blocks.some(block =>
       block.get('data').has(dataKey) &&
-      block.get('data').get(dataKey) === value);
+      block.get('data').get(dataKey) === dataValue);
   }
 
   return false;
