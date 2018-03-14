@@ -1,0 +1,14 @@
+{
+  "name": "@canner/slate-utils-have",
+  "version": "1.0.0",
+  "description": "Utility functions for judging whether it have something",
+  "main": "lib/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "../../node_modules/.bin/mocha ./test/index.js --compilers js:babel-register --bail --reporter=list"
+  },
+  "author": "",
+  "license": "MIT"
+}
