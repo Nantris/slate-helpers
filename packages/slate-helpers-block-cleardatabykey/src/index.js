@@ -7,7 +7,7 @@
 **/
 export default (change, dataKey) => {
   const {value} = change;
-  const blocks = value.document.getBlocks();
+  const {blocks} = value;
 
   // if have blocks
   if (blocks) {
