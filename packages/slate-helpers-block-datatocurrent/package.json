@@ -1,0 +1,12 @@
+{
+  "name": "@canner/slate-helpers-block-datatocurrent",
+  "version": "1.0.0",
+  "description": "A slate helper to add data to current block",
+  "main": "lib/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "../../node_modules/.bin/mocha ./test/index.js --compilers js:babel-register --bail --reporter=list"
+  }
+}
