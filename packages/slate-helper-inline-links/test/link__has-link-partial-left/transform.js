@@ -1,21 +1,19 @@
-import links from '../../src/inlines/links';
+import links from '../../src';
+import {Range} from 'slate';
 
-export default state => {
-  const {document, selection} = state;
-  const texts = document.getTexts();
-  const first = texts.get(0);
-  const second = texts.get(1);
-  const range = selection.merge({
+export default change => {
+  const {document} = change.value;
+  const first = document.getFirstText();
+  const second = document.getNextText(first.key);
+
+  const range = Range.create({
     anchorKey: first.key,
     anchorOffset: 0,
     focusKey: second.key,
     focusOffset: 8
   });
 
-  const nextState = state
-    .transform()
-    .moveTo(range)
-    .apply();
+  const nextState = change.select(range);
 
   return links(nextState, 'link', {href: "http://test.com/"});
 };

@@ -1,4 +1,4 @@
-import {haveBlocks} from '@canner/slate-utils-have';
+import {haveBlocks} from '@canner/slate-util-have';
 import {assign} from 'lodash';
 
 const DEFAULT = {

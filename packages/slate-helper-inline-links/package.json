@@ -12,6 +12,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@canner/slate-utils-have": "1.0.0"
+    "@canner/slate-util-have": "1.0.0"
   }
 }

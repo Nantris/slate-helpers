@@ -2,8 +2,9 @@ import links from '../../src';
 import {Range} from 'slate';
 
 export default change => {
-  const second = change.value.texts;
-  console.log(second)
+  const {document} = change.value;
+  const first = document.getFirstText();
+  const second = document.getNextText(first.key);
   const range = Range.create({
     anchorKey: second.key,
     anchorOffset: 4,

@@ -1,5 +1,5 @@
 /* eslint-disable no-alert */
-import {haveInlines} from '@canner/slate-utils-have';
+import {haveInlines} from '@canner/slate-util-have';
 import {assign} from 'lodash';
 
 const DEFAULT = {
@@ -23,7 +23,7 @@ export default (change, type, opt = DEFAULT) => {
   } else {
     change
       .insertText(text)
-      .extend(text.length)
+      .extend(0 - text.length)
       .wrapInline({
         type: type,
         data: {href: href}

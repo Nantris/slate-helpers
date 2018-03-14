@@ -1,11 +1,9 @@
-import links from '../../src/inlines/links';
+import links from '../../src';
 
-export default state => {
-  const nextState = state
-    .transform()
-    .moveForward(2)
-    .focus()
-    .apply();
+export default change => {
+  const nextChange = change
+    .move(2)
+    .focus();
 
-  return links(nextState, 'link');
+  return links(nextChange, 'link');
 };
