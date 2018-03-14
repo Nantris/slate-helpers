@@ -7,23 +7,20 @@ const DEFAULT = {
   typeDefault: 'paragraph'
 };
 
-export default (state, opt = DEFAULT) => {
+export default (change, opt = DEFAULT) => {
   const options = assign({}, DEFAULT, opt);
-  let newState = state
-    .transform();
+  let newChange;
 
   const utils = EditBlockquote(options).utils;
-  const transforms = EditBlockquote(options).transforms;
+  const changes = EditBlockquote(options).changes;
 
-  if (utils.isSelectionInBlockquote(state)) {
-    newState = transforms
-      .unwrapBlockquote(newState);
+  if (utils.isSelectionInBlockquote(change.value)) {
+    newChange = changes
+      .unwrapBlockquote(change);
   } else {
-    newState = transforms
-      .wrapInBlockquote(newState);
+    newChange = changes
+      .wrapInBlockquote(change);
   }
 
-  newState = newState
-    .apply();
-  return newState;
+  return newChange;
 };

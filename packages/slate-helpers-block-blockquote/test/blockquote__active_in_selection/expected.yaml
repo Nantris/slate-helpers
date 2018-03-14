@@ -1,9 +1,11 @@
-nodes:
-  - kind: block
-    type: blockquote
-    nodes:
-      - kind: block
-        nodes:
-          - kind: text
-            text: Hello World
-        type: paragraph
+document:  
+  nodes:
+    - object: block
+      type: blockquote
+      nodes:
+        - object: block
+          nodes:
+            - object: text
+              leaves:
+                - text: Hello World
+          type: paragraph

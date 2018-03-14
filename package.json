@@ -59,7 +59,6 @@
   "license": "MIT",
   "dependencies": {
     "lodash": "^4.17.4",
-    "slate-edit-blockquote": "^0.5.0",
     "slate-edit-list": "^0.11.2",
     "slate-edit-table": "^0.14.3"
   }
