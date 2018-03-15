@@ -1,9 +1,9 @@
 /* eslint-disable new-cap */
-import EditBlockquote from 'slate-edit-blockquote';
+import EditBlockquote from "slate-edit-blockquote";
 
 const DEFAULT = {
-  type: 'blockquote',
-  typeDefault: 'paragraph'
+  type: "blockquote",
+  typeDefault: "paragraph"
 };
 
 export default (change, opt = DEFAULT) => {
@@ -14,11 +14,9 @@ export default (change, opt = DEFAULT) => {
   const changes = EditBlockquote(options).changes;
 
   if (utils.isSelectionInBlockquote(change.value)) {
-    newChange = changes
-      .unwrapBlockquote(change);
+    newChange = changes.unwrapBlockquote(change);
   } else {
-    newChange = changes
-      .wrapInBlockquote(change);
+    newChange = changes.wrapInBlockquote(change);
   }
 
   return newChange;

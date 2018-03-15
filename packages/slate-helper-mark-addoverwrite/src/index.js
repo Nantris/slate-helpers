@@ -1,5 +1,5 @@
-import {whatMarkTypes} from '@canner/slate-util-what';
-import {getMarkType} from '@canner/slate-util-get';
+import { whatMarkTypes } from "@canner/slate-util-what";
+import { getMarkType } from "@canner/slate-util-get";
 
 export default (change, options) => {
   const type = options.type;
@@ -11,8 +11,5 @@ export default (change, options) => {
     });
   }
 
-  return change
-          .addMark(options)
-          .focus();
-
+  return change.addMark(options).focus();
 };

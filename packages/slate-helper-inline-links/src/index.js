@@ -1,4 +1,4 @@
-import {haveInlines} from '@canner/slate-util-have';
+import { haveInlines } from "@canner/slate-util-have";
 
 const DEFAULT = {
   href: "http://example.com/",
@@ -6,7 +6,7 @@ const DEFAULT = {
 };
 
 export default (change, type, opt = DEFAULT) => {
-  const {text, href} = Object.assign({}, DEFAULT, opt);
+  const { text, href } = Object.assign({}, DEFAULT, opt);
   let haveLinks = haveInlines(change, type);
 
   if (haveLinks) {
@@ -15,7 +15,7 @@ export default (change, type, opt = DEFAULT) => {
     change
       .wrapInline({
         type,
-        data: {href}
+        data: { href }
       })
       .collapseToEnd();
   } else {
@@ -24,7 +24,7 @@ export default (change, type, opt = DEFAULT) => {
       .extend(0 - text.length)
       .wrapInline({
         type: type,
-        data: {href: href}
+        data: { href: href }
       })
       .collapseToEnd();
   }

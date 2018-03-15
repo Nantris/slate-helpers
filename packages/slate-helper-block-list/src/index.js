@@ -1,18 +1,18 @@
 /* eslint-disable new-cap */
-import EditList from 'slate-edit-list';
+import EditList from "slate-edit-list";
 
 const DEFAULT = {
-  types: ['list-ol', 'list-ul'],
-  typeItem: 'list-item',
-  typeDefault: 'paragraph',
+  types: ["list-ol", "list-ul"],
+  typeItem: "list-item",
+  typeDefault: "paragraph",
   ordered: true
 };
 
 export default (change, opt = DEFAULT) => {
   const options = Object.assign({}, DEFAULT, opt);
-  const {types, ordered} = options;
-  const {utils, changes} = EditList(options);
-  const currentType = (ordered ? types[0] : types[1]);
+  const { types, ordered } = options;
+  const { utils, changes } = EditList(options);
+  const currentType = ordered ? types[0] : types[1];
   let newChange;
 
   if (utils.isSelectionInList(change.value)) {
@@ -22,8 +22,7 @@ export default (change, opt = DEFAULT) => {
       newChange = changes.unwrapList(change);
     }
   } else {
-    newChange = changes
-      .wrapInList(change, currentType);
+    newChange = changes.wrapInList(change, currentType);
   }
 
   return newChange;
