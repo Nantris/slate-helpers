@@ -1,6 +1,6 @@
 module.exports = {
-  extends: ["eslint:recommended", "plugin:react/recommended"],
-  plugins: ["react", "flowtype"],
+  extends: ["eslint:recommended", "plugin:react/recommended", "prettier"],
+  plugins: ["react", "flowtype", "prettier"],
   env: {
     browser: true,
     node: true
