@@ -1,6 +1,6 @@
 {
   "name": "@canner/slate-helper-block-list",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A helper for block list",
   "main": "lib/index.js",
   "directories": {
