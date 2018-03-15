@@ -4,7 +4,8 @@
   "description": "A slate utility function to get types",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "../../node_modules/.bin/babel src -d lib --copy-files"
   },
   "author": "",
   "license": "MIT"
