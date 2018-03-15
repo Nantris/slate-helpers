@@ -1,8 +1,8 @@
-import marks from '../../src';
-import {Range} from 'slate';
+import marks from "../../src";
+import { Range } from "slate";
 
 export default change => {
-  const {document} = change.value;
+  const { document } = change.value;
   const first = document.getFirstText();
   const range = Range.create({
     anchorKey: first.key,
@@ -13,5 +13,5 @@ export default change => {
 
   const nextChange = change.select(range);
 
-  return marks(nextChange, {type: 'test', data: {foo2: 'bar2'}});
+  return marks(nextChange, { type: "test", data: { foo2: "bar2" } });
 };

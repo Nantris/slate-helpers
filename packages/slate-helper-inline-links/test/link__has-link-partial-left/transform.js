@@ -1,8 +1,8 @@
-import links from '../../src';
-import {Range} from 'slate';
+import links from "../../src";
+import { Range } from "slate";
 
 export default change => {
-  const {document} = change.value;
+  const { document } = change.value;
   const first = document.getFirstText();
   const second = document.getNextText(first.key);
 
@@ -15,5 +15,5 @@ export default change => {
 
   const nextState = change.select(range);
 
-  return links(nextState, 'link', {href: "http://test.com/"});
+  return links(nextState, "link", { href: "http://test.com/" });
 };

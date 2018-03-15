@@ -1,8 +1,8 @@
-import links from '../../src';
-import {Range} from 'slate';
+import links from "../../src";
+import { Range } from "slate";
 
 export default change => {
-  const {document} = change.value;
+  const { document } = change.value;
   const first = document.getFirstText();
   const second = document.getNextText(first.key);
   const range = Range.create({
@@ -12,8 +12,7 @@ export default change => {
     focusOffset: 8
   });
 
-  const nextChange = change
-    .select(range);
+  const nextChange = change.select(range);
 
-  return links(nextChange, 'link', {href: "http://test.com/"});
+  return links(nextChange, "link", { href: "http://test.com/" });
 };

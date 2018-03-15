@@ -1,8 +1,8 @@
-import blockquote from '../../src';
-import {Range} from 'slate';
+import blockquote from "../../src";
+import { Range } from "slate";
 
 export default change => {
-  const {document} = change.value;
+  const { document } = change.value;
   const first = document.getFirstText();
   const range = Range.create({
     anchorKey: first.key,
@@ -11,8 +11,7 @@ export default change => {
     focusOffset: 7
   });
 
-  const nextChange = change
-    .select(range);
+  const nextChange = change.select(range);
 
   return blockquote(nextChange);
 };

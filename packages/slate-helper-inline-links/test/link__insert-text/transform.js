@@ -1,9 +1,7 @@
-import links from '../../src';
+import links from "../../src";
 
 export default change => {
-  const nextChange = change
-    .move(2)
-    .focus();
+  const nextChange = change.move(2).focus();
 
-  return links(nextChange, 'link');
+  return links(nextChange, "link");
 };
