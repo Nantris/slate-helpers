@@ -1,6 +1,6 @@
 {
   "name": "@canner/slate-helper-block-heading",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A slate helper for create heading",
   "main": "lib/index.js",
   "directories": {
@@ -13,6 +13,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@canner/slate-util-have": "^0.1.1"
+    "@canner/slate-util-have": "^0.1.2"
   }
 }
