@@ -1,4 +1,4 @@
-# slate-helpers
+# slate-helpers [![Greenkeeper badge](https://badges.greenkeeper.io/Canner/slate-plugins.svg)](https://greenkeeper.io/)
 > A set of helper and utility functions for Slate editors.
 
 ## Usage
