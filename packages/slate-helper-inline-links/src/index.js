@@ -1,6 +1,6 @@
 import { haveInlines } from "@canner/slate-util-have";
 
-const DEFAULT = {
+export const DEFAULT = {
   href: "http://example.com/",
   text: "example link"
 };

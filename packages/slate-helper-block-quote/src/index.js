@@ -1,7 +1,7 @@
 /* eslint-disable new-cap */
 import EditBlockquote from "slate-edit-blockquote";
 
-const DEFAULT = {
+export const DEFAULT = {
   type: "blockquote",
   typeDefault: "paragraph"
 };

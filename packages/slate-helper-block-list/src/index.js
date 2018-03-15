@@ -1,7 +1,7 @@
 /* eslint-disable new-cap */
 import EditList from "slate-edit-list";
 
-const DEFAULT = {
+export const DEFAULT = {
   types: ["list-ol", "list-ul"],
   typeItem: "list-item",
   typeDefault: "paragraph",

@@ -1,6 +1,6 @@
 import { haveBlocks } from "@canner/slate-util-have";
 
-const DEFAULT = {
+export const DEFAULT = {
   type: "heading",
   typeDefault: "paragraph"
 };
