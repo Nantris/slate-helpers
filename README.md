@@ -1,4 +1,4 @@
-# slate-helpers [![Greenkeeper badge](https://badges.greenkeeper.io/Canner/slate-plugins.svg)](https://greenkeeper.io/)
+# slate-helpers
 > A set of helper and utility functions for Slate editors.
 
 ## Usage
@@ -53,7 +53,7 @@ insert a link with `options.href` settings, wrapped inline if the selection is e
 
 `fn(change: Change, options: Object) => Change`
 
-If the selected marks have type that is equal to `options.type`, will be removeed the original one and add a new mark with the option settings.
+If the selected marks have type that is equal to `options.type`, will be removed the original one and add a new mark with the option settings.
 
 #### `@canner/slate-helper-mark-removeall`
 
