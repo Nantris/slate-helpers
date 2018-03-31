@@ -11,5 +11,8 @@
   "scripts": {
     "test": "../../node_modules/.bin/mocha ./test/index.js --compilers js:babel-register --bail --reporter=list",
     "prepublish": "../../node_modules/.bin/babel src -d lib --copy-files"
+  },
+  "dependencies": {
+    "object-values": "^2.0.0"
   }
 }
