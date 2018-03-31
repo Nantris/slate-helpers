@@ -31,5 +31,8 @@ module.exports = {
   LIST_ITEM: "list_item",
 
   // Default block
-  DEFAULT: "paragraph"
+  DEFAULT: "paragraph",
+
+  // Special
+  IMAGE: "image"
 };
