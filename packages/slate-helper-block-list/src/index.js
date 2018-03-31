@@ -1,6 +1,11 @@
 /* eslint-disable new-cap */
 import EditList from "slate-edit-list";
-import {OL_LIST, UL_LIST, LIST_ITEM, PARAGRAPH} from '@canner/slate-constant/lib/blocks';
+import {
+  OL_LIST,
+  UL_LIST,
+  LIST_ITEM,
+  PARAGRAPH
+} from "@canner/slate-constant/lib/blocks";
 
 export const DEFAULT = {
   types: [OL_LIST, UL_LIST],
