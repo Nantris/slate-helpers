@@ -1,6 +1,6 @@
 {
   "name": "@canner/slate-helper-block-quote",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "A slate helper for blockquote",
   "main": "lib/index.js",
   "directories": {
@@ -16,7 +16,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@canner/slate-constant": "^1.0.7",
+    "@canner/slate-constant": "^1.0.8",
     "slate-edit-blockquote": "^0.5.0"
   }
 }
