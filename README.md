@@ -9,6 +9,10 @@ This repository is maintain in a monorepo see packages in `packages` folder.
 
 ## Blocks
 
+#### `@canner/slate-constant`
+
+Shared slate type variables.
+
 #### `@canner/slate-helper-block-adddata`
 
 `fn(change: Change, data: Object) => Change`
@@ -26,12 +30,6 @@ This plugin is based on https://github.com/GitbookIO/slate-edit-blockquote, will
 `fn(change: Change, dataKey: String) => Change`
 
 This remove a data key that stores in current block type
-
-#### `@canner/slate-helper-block-heading`
-
-`fn(change: Change, options: Object) => Change`
-
-Transform normal block to heading block, if it is already wrapped unwrap it.
 
 #### `@canner/slate-helper-block-list`
 

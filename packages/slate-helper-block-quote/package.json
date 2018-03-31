@@ -16,6 +16,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "slate-edit-blockquote": "^0.5.0"
+    "slate-edit-blockquote": "^0.5.0",
+    "@canner/slate-constant": "^1.0.0"
   }
 }

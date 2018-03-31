@@ -1,9 +1,10 @@
 /* eslint-disable new-cap */
 import EditBlockquote from "slate-edit-blockquote";
+import {BLOCKQUOTE, PARAGRAPH} from '@canner/slate-constant/lib/blocks';
 
 export const DEFAULT = {
-  type: "blockquote",
-  typeDefault: "paragraph"
+  type: BLOCKQUOTE,
+  typeDefault: PARAGRAPH
 };
 
 export default (change, opt = DEFAULT) => {
