@@ -6,8 +6,8 @@ import constantInlines from "./inlines";
 import constantMarks from "./marks";
 import constantTableAlign from "./table-align";
 
-export const blocks = constantBlocks;
-export const containers = constantContainers;
-export const inlines = constantInlines;
-export const marks = constantMarks;
-export const tableAlign = constantTableAlign;
+export const BLOCKS = constantBlocks;
+export const CONTAINERS = constantContainers;
+export const INLINES = constantInlines;
+export const MARKS = constantMarks;
+export const TABLEALIGN = constantTableAlign;
