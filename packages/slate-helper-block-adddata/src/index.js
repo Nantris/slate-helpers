@@ -5,7 +5,7 @@ import { Map } from "immutable";
 
 export default (change, { data }) => {
   const { value } = change;
-  const blocks = value.document.getBlocks();
+  const blocks = value.blocks;
   // if have blocks
   if (blocks) {
     blocks.forEach(type => {

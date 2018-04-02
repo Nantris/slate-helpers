@@ -34,5 +34,6 @@ module.exports = {
   DEFAULT: "paragraph",
 
   // Special
-  IMAGE: "image"
+  IMAGE: "image",
+  VIDEO: "video"
 };
