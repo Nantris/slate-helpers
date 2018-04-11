@@ -10,12 +10,8 @@ export default (change, { data }) => {
   if (blocks) {
     blocks.forEach(type => {
       const mapData = Map(data);
-      let originalDataAttr = type.get("data") || Map({});
-      let newData;
-
-      mapData.forEach((value, key) => {
-        newData = originalDataAttr.set(key, value);
-      });
+      const originalDataAttr = type.get("data") || Map({});
+      const newData = originalDataAttr.merge(mapData)
 
       const newType = type.set("data", newData);
       // reset current type with new data
